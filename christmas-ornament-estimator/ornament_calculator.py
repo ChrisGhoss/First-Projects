@@ -26,14 +26,20 @@ def user_input():
     while True:
         try:
             h = float(input("Enter the height of your tree: "))
-            break
+            if h > 0:    
+                break
+            else:
+                print("Please enter a positive number")
         except ValueError:
             print("Please enter a valid float for your tree height.")
     # Checks if the radius input is a valid float
     while True:
         try:
             r = float(input("Enter the radius of your tree: "))
-            break
+            if r > 0:
+                break
+            else:
+                print("Please enter a positive number")
         except ValueError:
             print("Please enter a valid float for your tree radius.")
     return budg, h, r
@@ -58,6 +64,5 @@ def main():
         if v1 == "yes":
             break
     ornament_estimator(budg1, h1, r1)
-    return
 
 main()
