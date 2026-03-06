@@ -65,4 +65,5 @@ def main():
             break
     ornament_estimator(budg1, h1, r1)
 
-main()
+if __name__ == "__main__":
+    main()
