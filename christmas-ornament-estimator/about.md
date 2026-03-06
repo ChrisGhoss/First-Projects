@@ -6,6 +6,9 @@ With some decent research (and math), I managed to find the perfect program for 
 
 ## 💻 Code and Logic
 
-The code contains some basic concepts of Python, meaning anyone can comprehend it with some analysis.
-It asks for measurements, as well as whether you're on a budget or not to get the most accurate number of ornaments.
-Comments with hashtags are also there to help understand!
+The code contains some basic concepts of Python, meaning anyone can comprehend it with some analysis. 
+*What it does:* It asks for measurements, as well as whether you're on a budget or not to get the most accurate number of ornaments needed for a Christmas tree.
+
+*More to the folder:* A **Pytest** file checks whether or not the code works, by verifying different types of problems.
+
+*PS: Comments with hashtags are also there to help understand!*
