@@ -5,12 +5,12 @@ def ornament_estimator(budget, height, radius):
     slant_height = sqrt(radius**2 + height**2)
     surface = pi * radius * slant_height
     if budget == "yes":
-        # Budget present means less ornaments per meter square
+        # Budget present = less ornaments per meter square
         ornaments_per_ms = 8
     elif budget == "no":
-        # Budget absent means more ornaments per meter square
+        # Budget absent = more ornaments per meter square
         ornaments_per_ms = 12
-    # Calculates the amount according to the surface and the ornament rate
+    # Formula that calculates the amount based on surface + ornament rate
     base_ornament = surface * ornaments_per_ms
     total_ornament = round(base_ornament)
     print(f"About {total_ornament} ornaments are needed for your Christmas tree!")
