@@ -20,27 +20,21 @@ def ornament_estimator(budget, height, radius):
 def user_input():
     budg = yes_or_no("Are you on a budget?")
     print("Please note: All measures should be in meters.")
-    # Checks if the height input is a valid float
-    while True:
-        try:
-            h = float(input("Enter the height of your tree: "))
-            if h > 0:    
-                break
-            else:
-                print("Please enter a positive number")
-        except ValueError:
-            print("Please enter a valid float for your tree height.")
-    # Checks if the radius input is a valid float
-    while True:
-        try:
-            r = float(input("Enter the radius of your tree: "))
-            if r > 0:
-                break
-            else:
-                print("Please enter a positive number")
-        except ValueError:
-            print("Please enter a valid float for your tree radius.")
+    h = get_float("height")
+    r = get_float("radius")
     return budg, h, r
+
+def get_float(unit):
+    while True:
+        try:
+            u = float(input(f"Enter the {unit} of your tree: "))
+            if u > 0:
+                break
+            else:
+                print("Please enter a positive number")
+        except ValueError:
+            print(f"Please enter a valid float for your tree {unit}.")
+    return u
 
 def yes_or_no(text):
     print(text)
