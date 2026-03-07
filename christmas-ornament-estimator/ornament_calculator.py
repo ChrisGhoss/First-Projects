@@ -4,7 +4,6 @@ def ornament_estimator(budget, height, radius):
     # Formula that calculates the surface of a cone
     slant_height = sqrt(radius**2 + height**2)
     surface = pi * radius * slant_height
-    # Checks the budget
     if budget == "yes":
         # Budget present means less ornaments per meter square
         ornaments_per_ms = 8
@@ -19,7 +18,6 @@ def ornament_estimator(budget, height, radius):
     
 # Asks the user for all necessary information
 def user_input():
-    # Checks if the budget input is either "yes" or "no"
     budg = yes_or_no("Are you on a budget?")
     print("Please note: All measures should be in meters.")
     # Checks if the height input is a valid float
