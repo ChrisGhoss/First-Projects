@@ -4,15 +4,10 @@ def ornament_estimator(budget, height, radius):
     # Formula that calculates the surface of a cone
     slant_height = sqrt(radius**2 + height**2)
     surface = pi * radius * slant_height
-    if budget == "yes":
-        # Budget present = less ornaments per meter square
-        ornaments_per_ms = 8
-    elif budget == "no":
-        # Budget absent = more ornaments per meter square
-        ornaments_per_ms = 12
+    rates = {"yes": 8, "no": 12}
+    ornaments_per_ms = rates[budget]
     # Formula that calculates the amount based on surface + ornament rate
-    base_ornament = surface * ornaments_per_ms
-    total_ornament = round(base_ornament)
+    total_ornament = round(surface * ornaments_per_ms)
     print(f"About {total_ornament} ornaments are needed for your Christmas tree!")
     return total_ornament
     
