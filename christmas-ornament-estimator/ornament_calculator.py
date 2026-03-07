@@ -1,8 +1,8 @@
 from math import sqrt, pi
 
 def ornament_estimator(budget, height, radius):
-    # Formula that calculates the surface of a cone
     slant_height = sqrt(radius**2 + height**2)
+    # Formula that calculates the surface of a cone
     surface = pi * radius * slant_height
     rates = {"yes": 8, "no": 12}
     ornaments_per_ms = rates[budget]
