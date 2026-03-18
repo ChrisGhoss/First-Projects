@@ -11,7 +11,6 @@ def ornament_estimator(budget, height, radius):
     print(f"About {total_ornament} ornaments are needed for your Christmas tree!")
     return total_ornament
     
-# Asks the user for all necessary information
 def user_input():
     budg = yes_or_no("Are you on a budget?")
     print("Please note: All measures should be in meters.")
@@ -39,7 +38,6 @@ def yes_or_no(text):
             return answer
         print("Please type 'yes' or 'no'.")
 
-# Combines all necessary functions to only call the main one
 def main():
     while True:
         budg1, h1, r1 = user_input()
