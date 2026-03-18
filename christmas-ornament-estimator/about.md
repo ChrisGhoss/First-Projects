@@ -6,6 +6,10 @@ With some decent research (and math), I managed to create the perfect program fo
 The code is made of basic concepts in Python, meaning anyone can understand it with a quick glance. 
 
 *What it does:* It asks for measurements, as well as whether you're on a budget or not to get the most accurate number of ornaments needed for a Christmas tree.
+
+## 👷 Testing
+Every code needs to be tested in a way that assures the programmer that the code works.
+
 *More to the folder:* A **Pytest** file checks whether or not the code works, by verifying different types of problems.
 
 *PS: Comments with hashtags are also there to help understand!*
