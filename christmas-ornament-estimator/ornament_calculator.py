@@ -6,7 +6,7 @@ def ornament_estimator(budget, height, radius):
     surface = pi * radius * slant_height
     rates = {"yes": 8, "no": 12}
     ornaments_per_ms = rates[budget]
-    # Formula that calculates the amount based on surface + ornament rate
+    # Formula is based on the surface + ornament rate
     total_ornament = round(surface * ornaments_per_ms)
     print(f"About {total_ornament} ornaments are needed for your Christmas tree!")
     return total_ornament
