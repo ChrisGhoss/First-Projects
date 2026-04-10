@@ -1,0 +1,45 @@
+def inside_temp(outside_temp):
+    if outside_temp <= 18:
+        return(cold_to_hot(outside_temp))
+    else:
+        return(hot_to_cold(outside_temp))
+
+def get_outside_temp():
+    while True:
+        try:
+            temp = float(input("Enter your outside temperature (°C): "))
+            if -90 <= temp <= 57:
+                if not(18 < temp < 25):
+                    break
+                else:
+                    print("Perfect! You don't need an air conditioner.")
+                    ans = yes_or_no("Would you like to change it?")
+                    if ans == "no":
+                        break
+            else:
+                print("Temperature is not realistic.")
+        except:
+            print("Please enter a valid float for the outside temperature.")
+    return temp
+
+def yes_or_no(text):
+    print(text)
+    while True:
+        answer = input("Enter (yes/no): ").lower().strip()
+        if answer == "yes" or answer == "no":
+            return answer
+        print("Please type 'yes' or 'no'.")
+
+def cold_to_hot(temp):
+    optimal_temp = 20 - (temp*0.1)
+    return optimal_temp
+
+def hot_to_cold(temp):
+    optimal_temp = 28.6 - (temp*0.15)
+    return optimal_temp
+
+def main():
+    print(f"Your inside temperature should be about {inside_temp(get_outside_temp())}°C")
+
+if __name__ == "__main__":
+    main()
