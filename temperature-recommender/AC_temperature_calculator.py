@@ -1,4 +1,4 @@
-import sys
+from sys import exit
 
 def inside_temp(outside_temp):
     if outside_temp <= 18:
@@ -17,7 +17,7 @@ def get_outside_temp():
                     print("Perfect! You don't need an air conditioner.")
                     ans = yes_or_no("Would you like to change it?")
                     if ans == "no":
-                        sys.exit("You're all set!")
+                        exit("You're all set!")
             else:
                 print("Temperature is not realistic.")
         except ValueError:
