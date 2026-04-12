@@ -10,19 +10,16 @@ def get_outside_temp():
     while True:
         try:
             temp = float(input("Enter your outside temperature (°C): "))
-            if -90 <= temp <= 57:
-                if not(18 < temp < 25):
-                    break
-                else:
-                    print("Perfect! You don't need an air conditioner.")
-                    ans = yes_or_no("Would you like to change it?")
-                    if ans == "no":
-                        exit("You're all set!")
-            else:
+            if not(-90 <= temp <= 57):
                 print("Temperature is not realistic.")
+            elif 18 < temp < 25:
+                print("Perfect! You don't need an air conditioner.")
+                if yes_or_no("Would you like to change it?") == "no":
+                    exit("You're all set!")
+            else:
+                return temp
         except ValueError:
             print("Please enter a valid float for the outside temperature.")
-    return temp
 
 def yes_or_no(text):
     print(text)
