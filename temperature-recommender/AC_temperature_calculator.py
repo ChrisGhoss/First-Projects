@@ -3,7 +3,7 @@ from sys import exit
 def inside_temp(outside_temp):
     if outside_temp <= 18:
         return(cold_to_hot(outside_temp))
-    elif outside_temp >= 25:
+    else:
         return(hot_to_cold(outside_temp))
 
 def get_outside_temp():
