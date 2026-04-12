@@ -33,11 +33,17 @@ def yes_or_no(text):
         print("Please type 'yes' or 'no'.")
 
 def cold_to_hot(temp):
-    optimal_temp = 20 - (temp*0.1)
+    # Integer found at 25°C
+    initial_int = 20
+    # Linear function : Higher outside temp = Less inside temp
+    optimal_temp = initial_int - (temp*0.1)
     return optimal_temp
 
 def hot_to_cold(temp):
-    optimal_temp = 28.6 - (temp*0.15)
+    # Integer found at 18°C
+    initial_int = 28.6
+    # Linear function : Higher outside temp = Less inside temp
+    optimal_temp = initial_int - (temp*0.15)
     return optimal_temp
 
 def main():
