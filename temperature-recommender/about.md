@@ -1,0 +1,2 @@
+# 🌡️ [AC Temperature Recommender](/temperature-recommender/AC_temperature_calculator.py)
+Just like my Christmas ornament project ([About](/christmas-ornament-estimator/about.md)), I was inspired by looking around my room when I saw an air conditioner and thought to myself on how can I know exactly what temperature I should set it on based on the temperature outside. So naturally I made a program that uses 2 formulas depending on the atmosphere, to determine what temperature the air conditioner should be set on.
