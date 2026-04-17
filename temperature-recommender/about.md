@@ -4,4 +4,4 @@ Just like my Christmas ornament project ([About](/christmas-ornament-estimator/a
 ## 💻 Code and Logic
 The code is made of basic concepts in Python, meaning anyone can understand it with a quick glance.
 
-*What it does:* It asks for a single input, which is the current outside temperature in degrees Celcius, and returns the ideal temperature that you should set your air conditioner to.
+*What it does:* It asks for a single input; the current outside temperature in degrees Celcius, and returns the ideal temperature that you should set your air conditioner to.
