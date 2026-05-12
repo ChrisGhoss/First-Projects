@@ -44,3 +44,5 @@ def main():
     user_quality = yes_or_no("Do you have premium cans?")
     print(f"The total amount of paint cans is {get_paint(user_area, user_quality)}")
     
+if __name__ == "__main__":
+    main()
