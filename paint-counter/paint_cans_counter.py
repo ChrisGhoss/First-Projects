@@ -55,7 +55,7 @@ def summary():
         print(f"Height: {h}")
         print(f"Lenght: {l}")
         print(f"Width: {w}")
-        print(f"Paint ceiling: {ceiling}")
+        print(f"Paint ceiling: {ceiling.capitalize()}")
         print(f"Quality: {user_quality}")
         v1 = yes_or_no("Are you sure you want to continue?")
         if v1 == "yes":
