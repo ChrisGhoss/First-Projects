@@ -38,17 +38,20 @@ def yes_or_no(text):
             return answer
         print("Please type 'yes' or 'no'.")
 
-def main():
+def summary():
     while True:
-        budg1, h1, r1 = user_input()
+        final_budget, final_height, final_radius = user_input()
         print("Summary:")
-        print(f"Budget: {budg1}")
-        print(f"Height: {h1}")
-        print(f"Radius: {r1}")
+        print(f"Budget: {final_budget}")
+        print(f"Height: {final_height}")
+        print(f"Radius: {final_radius}")
         v1 = yes_or_no("Are you sure you want to continue?")
         if v1 == "yes":
-            break
-    ornament_estimator(budg1, h1, r1)
+            return final_budget, final_height, final_radius
+
+def main():
+    b, h, r = summary()
+    ornament_estimator(b, h, r)
 
 if __name__ == "__main__":
     main()
