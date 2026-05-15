@@ -1,7 +1,7 @@
 from math import ceil
 
 def get_dimensions():
-    print("PS: All measures should be in meters (m)")
+    print("Please note: All measures should be in meters.")
     return dim_input("height"), dim_input("length"), dim_input("width")
 
 def dim_input(unit):
