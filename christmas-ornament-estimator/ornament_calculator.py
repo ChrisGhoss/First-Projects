@@ -42,7 +42,7 @@ def summary():
     while True:
         final_budget, final_height, final_radius = user_input()
         print("Summary:")
-        print(f"Budget: {final_budget}")
+        print(f"Budget: {final_budget.capitalize()}")
         print(f"Height: {final_height}")
         print(f"Radius: {final_radius}")
         v1 = yes_or_no("Are you sure you want to continue?")
