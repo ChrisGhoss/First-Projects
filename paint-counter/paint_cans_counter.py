@@ -40,24 +40,30 @@ def final_area(h, l, w):
         user_area = area_w_ceiling(h, l, w)
     else:
         user_area = area_of_room(h, l, w)
-    return user_area
+    return ans_ceiling, user_area
 
 def summary():
     while True:
         h, l, w = get_dimensions()
-        area = final_area(h, l, w)
+        ceiling, area = final_area(h, l, w)
+        quality_answer = yes_or_no("Do you have premium cans?")
+        if quality_answer == "yes":
+            user_quality = "Premium"
+        else:
+            user_quality = "Regular"
         print("Summary:")
         print(f"Height: {h}")
         print(f"Lenght: {l}")
         print(f"Width: {w}")
+        print(f"Paint ceiling: {ceiling}")
+        print(f"Quality: {user_quality}")
         v1 = yes_or_no("Are you sure you want to continue?")
         if v1 == "yes":
-            return area
+            return area, user_quality
         
 def main():
-    area = summary()
-    user_quality = yes_or_no("Do you have premium cans?")
-    print(f"The total amount of paint cans is {get_paint(area, user_quality)}")
+    f_area, f_quality = summary()
+    print(f"The total amount of paint cans is {get_paint(f_area, f_quality)}")
     
 if __name__ == "__main__":
     main()
