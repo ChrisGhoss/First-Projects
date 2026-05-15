@@ -34,15 +34,19 @@ def yes_or_no(text):
             return answer
         print("Please type 'yes' or 'no'.")
 
-def main():
+def final_area():
     h, l, w = get_dimensions()
     ans_ceiling = yes_or_no("Will you paint the ceiling?")
     if ans_ceiling == "yes":
         user_area = area_w_ceiling(h, l, w)
     else:
         user_area = area_of_room(h, l, w)
+    return user_area
+
+def main():
+    area = final_area()
     user_quality = yes_or_no("Do you have premium cans?")
-    print(f"The total amount of paint cans is {get_paint(user_area, user_quality)}")
+    print(f"The total amount of paint cans is {get_paint(area, user_quality)}")
     
 if __name__ == "__main__":
     main()
