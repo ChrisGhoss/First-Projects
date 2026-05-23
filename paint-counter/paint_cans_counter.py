@@ -53,7 +53,7 @@ def summary():
             user_quality = "Regular"
         print("Summary:")
         print(f"Height: {h}")
-        print(f"Lenght: {l}")
+        print(f"Length: {l}")
         print(f"Width: {w}")
         print(f"Paint ceiling: {ceiling.capitalize()}")
         print(f"Quality: {user_quality}")
