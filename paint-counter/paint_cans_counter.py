@@ -8,10 +8,10 @@ def dim_input(unit):
     while True:
         try:
             ans = float(input(f"Please enter the {unit} of your room: "))
+            return ans
         except ValueError:
             print(f"Please enter a valid float for the {unit}.")
-        return ans
-
+            
 def area_of_room(h, l, w):
     return (2 * l * h) + (2 * w * h)
 
