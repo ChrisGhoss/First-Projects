@@ -19,7 +19,7 @@ def area_w_ceiling(h, l, w):
     return area_of_room(h, l, w) + (l * w)
 
 def get_paint(area, quality):
-    if quality == "yes":
+    if quality == "Premium":
         premium_rate = 12
         return ceil(area / premium_rate)
     else:
