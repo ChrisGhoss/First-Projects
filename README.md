@@ -7,3 +7,5 @@ A collection of interesting programming projects that helped me start my career
 [Ornament Calculator](/christmas-ornament-estimator/ornament_calculator.py)
 
 [AC Temperature Recommender](/temperature-recommender/AC_temperature_calculator.py)
+
+[Paint Cans Counter](/paint-counter/paint_cans_counter.py)
