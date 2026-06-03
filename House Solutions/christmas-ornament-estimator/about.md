@@ -1,4 +1,4 @@
-# 🎄 [Ornament Calculator](/christmas-ornament-estimator/ornament_calculator.py)
+# 🎄 [Ornament Calculator](/House%20Solutions/christmas-ornament-estimator/ornament_calculator.py)
 This is my first-ever project (made at 17 years old), inspired by a quick look at my Christmas tree in January. It got me wondering if there was a way to estimate how many ornaments were necessary for a Christmas tree using simply the tree's measurements, while of course taking in consideration how much the person can spend.
 With some decent research (and math), I managed to create the perfect program for anyone to solve this problem in under a minute. Try it out!
 
