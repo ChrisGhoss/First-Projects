@@ -45,8 +45,7 @@ def summary():
         print(f"Budget: {final_budget.capitalize()}")
         print(f"Height: {final_height}")
         print(f"Radius: {final_radius}")
-        v1 = yes_or_no("Are you sure you want to continue?")
-        if v1 == "yes":
+        if  yes_or_no("Are you sure you want to continue?") == "yes":
             return final_budget, final_height, final_radius
 
 def main():
