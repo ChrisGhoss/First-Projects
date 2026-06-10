@@ -17,10 +17,19 @@ def yes_or_no(text):
 def seat_edges():
     return yes_or_no("Do you want people sitting at the edges? ")
 
+def summary():
+    while True:
+        guests = get_guests()
+        s_edges = seat_edges()
+        print("Summary:")
+        print(f"Guests: {guests}")
+        print(f"Seat Edges: {s_edges}")
+        if yes_or_no("Are you sure you want to continue?") == "yes":
+            return guests, s_edges
+        
 def table_length():
     space_per_person = 60
-    amount_of_guests = get_guests()
-    uses_seat_edges = seat_edges()
+    amount_of_guests, uses_seat_edges = summary()
     if uses_seat_edges == "no":
         return (amount_of_guests / 2) * space_per_person
     elif uses_seat_edges == "yes":
