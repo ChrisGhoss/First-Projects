@@ -25,20 +25,32 @@ def yes_or_no(text):
         print("Please type 'yes' or 'no'.")
 
 def get_frame_width(frame_number):
-    ans = yes_or_no("Are all your frames the same size? ")
-    if ans == "yes":
-        return get_answer("Enter the common width of your frame: ", "float") * frame_number
-    elif ans == "no":
-        total = 0
-        for i in range(frame_number):
-            total += get_answer(f"Enter the width of frame #{i+1}: ", "float")
-        return total
-    
+    if frame_number > 1:
+        ans = yes_or_no("Are all your frames the same size? ")
+        if ans == "yes":
+            return get_answer("Enter the common width of your frame: ", "float") * frame_number
+        elif ans == "no":
+            total = 0
+            for i in range(frame_number):
+                total += get_answer(f"Enter the width of frame #{i+1}: ", "float")
+            return total
+    elif frame_number == 1:
+        return get_answer("Enter the width of the frame: ", "float")
+
+def verification():
+    wall = get_wall_width()
+    while True:
+        amount = get_frame_number()
+        if amount > 0:
+            break
+        else:
+            print("Number of frames should be 1 or more.")
+    total_frame_width = get_frame_width(amount)
+    return wall, amount, total_frame_width
+
 def summary():
     while True:
-        wall = get_wall_width()
-        amount = get_frame_number()
-        total_frame_width = get_frame_width(amount)
+        wall, amount, total_frame_width = verification()
         print("Summary:")
         print(f"Wall Width: {wall}")
         print(f"Frame Amount: {amount}")
