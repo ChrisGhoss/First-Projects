@@ -1,17 +1,20 @@
-def get_answer(text):
+def get_answer(text, type):
     while True:
         try:
-            value = int(input(text))
+            if type == "integer":
+                value = int(input(text))
+            elif type == "float":
+                value = float(input(text))
             return value
         except ValueError:
-            print("Please enter a valid integer.")
+            print(f"Please enter a valid {type}.")
 
 def get_wall_width():
     print("PS: Measure should be in centimeters (cm).")
-    return get_answer("Enter the width of your wall: ")
+    return get_answer("Enter the width of your wall: ", "float")
 
 def get_frame_number():
-    return get_answer("Enter the amount of frames: ")
+    return get_answer("Enter the amount of frames: ", "integer")
 
 def yes_or_no(text):
     print(text)
@@ -24,11 +27,11 @@ def yes_or_no(text):
 def get_frame_width(frame_number):
     ans = yes_or_no("Are all your frames the same size? ")
     if ans == "yes":
-        return get_answer("Enter the common width of your frame: ") * frame_number
+        return get_answer("Enter the common width of your frame: ", "float") * frame_number
     elif ans == "no":
         total = 0
         for i in range(frame_number):
-            total += get_answer(f"Enter the width of frame #{i+1}: ")
+            total += get_answer(f"Enter the width of frame #{i+1}: ", "float")
         return total
     
 def main():
