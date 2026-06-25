@@ -3,7 +3,7 @@ def get_guests():
         try:
             amount = int(input("Enter the amount of guests for your table: "))
             return amount
-        except ValueError():
+        except ValueError:
             print("Please enter a valid integer.")
 
 def yes_or_no(text):
