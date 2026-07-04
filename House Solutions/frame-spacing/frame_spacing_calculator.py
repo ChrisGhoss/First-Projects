@@ -5,7 +5,10 @@ def get_answer(text, type):
                 value = int(input(text))
             elif type == "float":
                 value = float(input(text))
-            return value
+            if value > 0:
+                return value
+            else:
+                print(f"Your {type} should be positive!")
         except ValueError:
             print(f"Please enter a valid {type}.")
 
@@ -38,12 +41,7 @@ def get_frame_width(frame_number):
 
 def verification():
     wall = get_wall_width()
-    while True:
-        amount = get_frame_number()
-        if amount > 0:
-            break
-        else:
-            print("Number of frames should be 1 or more.")
+    amount = get_frame_number()
     total_frame_width = get_frame_width(amount)
     return wall, amount, total_frame_width
 
