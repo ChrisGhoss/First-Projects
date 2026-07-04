@@ -10,7 +10,6 @@ def get_answer(text, type):
             print(f"Please enter a valid {type}.")
 
 def get_wall_width():
-    print("PS: Measure should be in centimeters (cm).")
     return get_answer("Enter the width of your wall: ", "float")
 
 def get_frame_number():
@@ -59,6 +58,7 @@ def summary():
             return wall, amount, total_frame_width
     
 def main():
+    print("PS: Measure should be in centimeters (cm).")
     wall, amount, total_frame_width = summary()
     gaps = amount + 1
     space = (wall - total_frame_width) / (gaps)
