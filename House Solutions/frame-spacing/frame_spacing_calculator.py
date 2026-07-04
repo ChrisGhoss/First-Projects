@@ -42,8 +42,12 @@ def get_frame_width(frame_number):
 def verification():
     wall = get_wall_width()
     amount = get_frame_number()
-    total_frame_width = get_frame_width(amount)
-    return wall, amount, total_frame_width
+    while True:
+        total_frame_width = get_frame_width(amount)
+        if wall >= total_frame_width:
+            return wall, amount, total_frame_width
+        else:
+            print("The total frame width is bigger than the actual wall!")
 
 def summary():
     while True:
