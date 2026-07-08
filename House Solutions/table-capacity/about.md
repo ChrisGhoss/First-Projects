@@ -4,4 +4,4 @@ Counting guests to estimate how long a table should be has always been a challen
 ## 💻 Code and Logic
 The code is made of basic concepts in Python, meaning anyone can understand it with a quick glance.
 
-*What it does:* It asks for two simple inputs: The number of guests and whether some will sit on the ends of the table. It then uses this information to calculate the total length of the desired table that fits every guest. 
+*What it does:* It asks for two simple inputs: the number of guests and whether some will sit on the ends of the table. It then uses this information to calculate the total length of the desired table that fits every guest. 
