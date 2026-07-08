@@ -33,9 +33,11 @@ def summary():
 def table_length():
     space_per_person = 60
     amount_of_guests, uses_seat_edges = summary()
-    if uses_seat_edges == "no":
+    if amount_of_guests == 1 or (uses_seat_edges == "yes" and amount_of_guests <= 4):
+        return space_per_person
+    elif uses_seat_edges == "no":
         return (amount_of_guests / 2) * space_per_person
-    elif uses_seat_edges == "yes":
+    elif uses_seat_edges == "yes" and amount_of_guests > 4:
         return ((amount_of_guests - 2) / 2) * space_per_person
 
 def main():
