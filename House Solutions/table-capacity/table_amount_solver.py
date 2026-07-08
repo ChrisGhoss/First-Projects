@@ -2,7 +2,10 @@ def get_guests():
     while True:
         try:
             amount = int(input("Enter the amount of guests for your table: "))
-            return amount
+            if amount > 0:
+                return amount
+            else:
+                print("Your integer should be positive!")
         except ValueError:
             print("Please enter a valid integer.")
 
