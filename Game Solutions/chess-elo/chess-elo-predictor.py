@@ -10,13 +10,16 @@ def get_player_elo(number):
             print("Please enter a valid float.")
 
 def get_result():
-    result = input("Which result are you expecting (W/D/L)? ")
-    if result == "W":
-        return 1, "win"
-    elif result == "D":
-        return 0.5, "draw"
-    elif result == "L":
-        return 0, "lose"
+    while True:
+        result = input("Which result are you expecting (W/D/L)? ")
+        if result in ("W", "w", "win"):
+            return 1, "win"
+        elif result in ("D", "d", "draw"):
+            return 0.5, "draw"
+        elif result in ("L", "l", "loss"):
+            return 0, "lose"
+        else:
+            print("Please enter W, D or L")
 
 def get_k_factor(elo):
     if elo < 1600:
