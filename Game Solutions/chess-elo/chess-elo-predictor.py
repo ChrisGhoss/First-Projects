@@ -10,13 +10,21 @@ def get_result():
     elif result == "L":
         return 0, "lose"
 
+def get_k_factor(elo):
+    if elo < 1600:
+        return 40
+    elif elo < 2400:
+        return 20
+    else:
+        return 10
+
 def formula():
     elo1 = get_player_elo(1)
     elo2 = get_player_elo(2)
     dif = elo2 - elo1
     expected = 1/(1 + 10**(dif/400))
     score, result = get_result()
-    k = 32
+    k = get_k_factor(elo1)
     return elo1 + k * (score - expected), result
 
 def main():
