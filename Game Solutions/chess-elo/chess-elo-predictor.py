@@ -1,5 +1,13 @@
 def get_player_elo(number):
-    return int(input(f"Please enter P{number}'s elo: "))
+    while True:
+        try:
+            value = float(input(f"Please enter P{number}'s elo: "))
+            if value > 0:
+                return value
+            else:
+                print("Your elo should be positive!")
+        except ValueError:
+            print("Please enter a valid float.")
 
 def get_result():
     result = input("Which result are you expecting (W/D/L)? ")
@@ -29,7 +37,7 @@ def formula():
 
 def main():
     new_elo, result = formula()
-    print(f"Player1 will have {new_elo} elo if they {result}.")
+    print(f"P1 will have {new_elo} elo if they {result}.")
 
 if __name__ == "__main__":
     main()
