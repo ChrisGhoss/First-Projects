@@ -29,18 +29,35 @@ def get_k_factor(elo):
     else:
         return 10
 
+def yes_or_no(text):
+    print(text)
+    while True:
+        answer = input("Enter (yes/no): ").lower().strip()
+        if answer == "yes" or answer == "no":
+            return answer
+        print("Please type 'yes' or 'no'.")
+
+def summary():
+    while True:
+        elo1, elo2 = get_player_elo(1), get_player_elo(2)
+        score, result = get_result()
+        print("Summary:")
+        print(f"P1's elo: {elo1}")
+        print(f"P2's: {elo2}")
+        print(f"Result: {result}")
+        if yes_or_no("Are you sure you want to continue?") == "yes":
+            return elo1, elo2, score, result
+
 def formula():
-    elo1 = get_player_elo(1)
-    elo2 = get_player_elo(2)
+    elo1, elo2, score, result = summary()
     dif = elo2 - elo1
     expected = 1/(1 + 10**(dif/400))
-    score, result = get_result()
     k = get_k_factor(elo1)
     return elo1 + k * (score - expected), result
 
 def main():
     new_elo, result = formula()
-    print(f"P1 will have {new_elo} elo if they {result}.")
+    print(f"P1 will have {round(new_elo)} elo if they {result}.")
 
 if __name__ == "__main__":
     main()
