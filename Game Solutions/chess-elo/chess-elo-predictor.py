@@ -1,11 +1,11 @@
-def get_player_elo(number):
+def get_player_Elo(number):
     while True:
         try:
-            value = float(input(f"Please enter P{number}'s elo: "))
+            value = float(input(f"Please enter P{number}'s Elo: "))
             if value > 0:
                 return value
             else:
-                print("Your elo should be positive!")
+                print("Your Elo should be positive!")
         except ValueError:
             print("Please enter a valid float.")
 
@@ -21,10 +21,10 @@ def get_result():
         else:
             print("Please enter W, D or L")
 
-def get_k_factor(elo):
-    if elo < 1600:
+def get_k_factor(Elo):
+    if Elo < 1600:
         return 40
-    elif elo < 2400:
+    elif Elo < 2400:
         return 20
     else:
         return 10
@@ -39,25 +39,25 @@ def yes_or_no(text):
 
 def summary():
     while True:
-        elo1, elo2 = get_player_elo(1), get_player_elo(2)
+        Elo1, Elo2 = get_player_Elo(1), get_player_Elo(2)
         score, result = get_result()
         print("Summary:")
-        print(f"P1's elo: {elo1}")
-        print(f"P2's: {elo2}")
+        print(f"P1's Elo: {Elo1}")
+        print(f"P2's: {Elo2}")
         print(f"Result: {result}")
         if yes_or_no("Are you sure you want to continue?") == "yes":
-            return elo1, elo2, score, result
+            return Elo1, Elo2, score, result
 
 def formula():
-    elo1, elo2, score, result = summary()
-    dif = elo2 - elo1
+    Elo1, Elo2, score, result = summary()
+    dif = Elo2 - Elo1
     expected = 1/(1 + 10**(dif/400))
-    k = get_k_factor(elo1)
-    return elo1 + k * (score - expected), result
+    k = get_k_factor(Elo1)
+    return Elo1 + k * (score - expected), result
 
 def main():
-    new_elo, result = formula()
-    print(f"P1 will have {round(new_elo)} elo if they {result}.")
+    new_Elo, result = formula()
+    print(f"P1 will have {round(new_Elo)} Elo if they {result}.")
 
 if __name__ == "__main__":
     main()
