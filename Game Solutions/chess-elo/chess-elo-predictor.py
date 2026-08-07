@@ -11,13 +11,13 @@ def get_player_Elo(number):
 
 def get_result():
     while True:
-        result = input("Which result are you expecting (W/D/L)? ")
+        result = input("Which result are you expecting for P1 (W/D/L)? ")
         if result in ("W", "w", "win"):
-            return 1, "win"
+            return 1, 0, "win", "lose"
         elif result in ("D", "d", "draw"):
-            return 0.5, "draw"
+            return 0.5, 0.5, "draw", "draw"
         elif result in ("L", "l", "loss"):
-            return 0, "lose"
+            return 0, 1, "lose", "win"
         else:
             print("Please enter W, D or L")
 
@@ -40,24 +40,29 @@ def yes_or_no(text):
 def summary():
     while True:
         Elo1, Elo2 = get_player_Elo(1), get_player_Elo(2)
-        score, result = get_result()
+        score1, score2, result1, result2 = get_result()
         print("Summary:")
         print(f"P1's Elo: {Elo1}")
-        print(f"P2's: {Elo2}")
-        print(f"Result: {result}")
+        print(f"P2's Elo: {Elo2}")
+        print(f"Result for P1: {result1}")
+        print(f"Result for P2: {result2}")
         if yes_or_no("Are you sure you want to continue?") == "yes":
-            return Elo1, Elo2, score, result
+            return Elo1, Elo2, score1, score2, result1, result2
 
 def formula():
-    Elo1, Elo2, score, result = summary()
-    dif = Elo2 - Elo1
-    expected = 1/(1 + 10**(dif/400))
-    k = get_k_factor(Elo1)
-    return Elo1 + k * (score - expected), result
+    Elo1, Elo2, score1, score2, result1, result2 = summary()
+    dif1 = Elo2 - Elo1
+    dif2 = Elo1 - Elo2
+    expected1 = 1/(1 + 10**(dif1/400))
+    expected2 = 1/(1 + 10**(dif2/400))
+    k1 = get_k_factor(Elo1)
+    k2 = get_k_factor(Elo2)
+    return Elo1 + k1 * (score1 - expected1), Elo2 + k2 * (score2 - expected2), result1, result2
 
 def main():
-    new_Elo, result = formula()
-    print(f"P1 will have {round(new_Elo)} Elo if they {result}.")
+    new_Elo1, new_Elo2, result1, result2 = formula()
+    print(f"P1 will have {round(new_Elo1)} Elo if they {result1}.")
+    print(f"P2 will have {round(new_Elo2)} Elo if they {result2}.")
 
 if __name__ == "__main__":
     main()
