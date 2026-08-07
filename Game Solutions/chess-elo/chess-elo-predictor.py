@@ -11,12 +11,12 @@ def get_player_Elo(number):
 
 def get_result():
     while True:
-        result = input("Which result are you expecting for P1 (W/D/L)? ")
-        if result in ("W", "w", "win"):
+        result = input("Which result are you expecting for P1 (W/D/L)? ").lower().strip()
+        if result in ("w", "win"):
             return 1, 0, "win", "lose"
-        elif result in ("D", "d", "draw"):
+        elif result in ("d", "draw"):
             return 0.5, 0.5, "draw", "draw"
-        elif result in ("L", "l", "loss"):
+        elif result in ("l", "loss"):
             return 0, 1, "lose", "win"
         else:
             print("Please enter W, D or L")
