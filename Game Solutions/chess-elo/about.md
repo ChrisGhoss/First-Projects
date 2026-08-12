@@ -4,4 +4,4 @@ What started as a simple school project has evolved into a fully functional prog
 ## 💻 Code and Logic
 The code is made of basic concepts in Python, meaning anyone can understand it with a quick glance.
 
-*What it does:* It asks for three inputs: Player 1’s Elo, Player 2’s Elo, and the match outcome (win, draw, or loss). Using this data, the program calculates the resulting Elo ratings.
+*What it does:* It asks for three inputs: Player 1’s Elo, Player 2’s Elo, and the match outcome (win, draw, or loss). Using this data, the program calculates the resulting Elo ratings of both players.
