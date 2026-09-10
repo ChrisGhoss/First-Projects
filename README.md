@@ -11,3 +11,7 @@ A collection of interesting programming projects that helped me start my career
 🎨 [Paint Cans Counter](/House%20Solutions/paint-counter/paint_cans_counter.py)
 🪑 [Table Capacity](/House%20Solutions/table-capacity/table_amount_solver.py)
 🌡️ [AC Temperature Recommender](/House%20Solutions/temperature-recommender/AC_temperature_calculator.py)
+
+### Game Solutions
+
+♟️ [Chess Elo Predictor](/Game%20Solutions/chess-Elo/chess_Elo_predictor.py)
