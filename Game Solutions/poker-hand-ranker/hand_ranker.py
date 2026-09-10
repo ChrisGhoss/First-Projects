@@ -2,9 +2,10 @@ from collections import Counter
 
 def get_cards():
     cards = []
-    print ("PS: Cards should be written in the format '(number/letter + initial of suit)'.")
+    print ("PS: Cards should be written in the format '(number [2-14] + initial of suit)'.")
     for i in range(5):
-        cards.append(input(f"Please enter card#{i+1}: ").upper())
+        card = input(f"Please enter card#{i+1}: ").upper()
+        cards.append(card)
     return cards
 
 def seperate_value(cards):
@@ -33,3 +34,29 @@ def get_value_count(l_values):
 
 def main():
     values, suits = seperate_value(get_cards())
+    straight = is_straight(values)
+    flush = is_flush(suits)
+    count = get_value_count(values)
+    if straight and flush and values[0] == 14:
+            print("ROYAL FLUSH")
+    elif straight and flush:
+        print("STRAIGHT FLUSH")
+    elif count[0] == 4:
+        print("FOUR OF A KIND")
+    elif count[0] == 3 and count[1] == 2:
+        print("FULL HOUSE")
+    elif flush:
+        print("FLUSH")
+    elif straight:
+        print("STRAIGHT")
+    elif count[0] == 3:
+        print("THREE OF A KIND")
+    elif count[0] == 2 and count[1] == 2:
+        print("TWO PAIR")
+    elif count[0] == 2:
+        print("PAIR")
+    else:
+        print("HIGH CARD")
+
+if __name__ == "__main__":
+    main()
