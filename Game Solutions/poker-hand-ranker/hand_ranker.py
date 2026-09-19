@@ -14,10 +14,13 @@ def get_cards():
                 print("Invalid, number should be from 2 to 14.")
                 continue
             if suit_part not in l_suits:
-                print("Invalid, suit should be either C, D, H or S")
+                print("Invalid, suit should be either C, D, H or S.")
                 continue
-            cards.append(card)
-            break
+            if card not in cards:
+                cards.append(card)
+                break
+            else:
+                print("Card already in hand.")
     return cards
 
 def seperate_value(cards):
