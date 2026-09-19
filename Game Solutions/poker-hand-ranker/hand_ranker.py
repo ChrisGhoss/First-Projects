@@ -1,11 +1,23 @@
 from collections import Counter
 
 def get_cards():
+    l_numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
+    l_suits = ["C", "D", "H", "S"]
     cards = []
-    print ("PS: Cards should be written in the format '(number [2-14] + initial of suit)'.")
+    print ("PS: Cards should be written in the format '(number [2-14] + suit initial [C-D-H-S])'.")
     for i in range(5):
-        card = input(f"Please enter card#{i+1}: ").upper()
-        cards.append(card)
+        while True:
+            card = input(f"Please enter card#{i+1}: ").upper()
+            num_part = card[:-1]
+            suit_part = card[-1:]
+            if num_part not in l_numbers:
+                print("Invalid, number should be from 2 to 14.")
+                continue
+            if suit_part not in l_suits:
+                print("Invalid, suit should be either C, D, H or S")
+                continue
+            cards.append(card)
+            break
     return cards
 
 def seperate_value(cards):
