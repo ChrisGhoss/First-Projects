@@ -47,8 +47,26 @@ def get_value_count(l_values):
     counts = Counter(l_values)
     return sorted(list(counts.values()), reverse=True)
 
+def yes_or_no(text):
+    print(text)
+    while True:
+        answer = input("Enter (yes/no): ").lower().strip()
+        if answer == "yes" or answer == "no":
+            return answer
+        print("Please type 'yes' or 'no'.")
+        
+def summary():
+    while True:
+        card_hand = get_cards()
+        print("Summary:")
+        for i in range(5):
+            print(f"Card#{i+1}: {card_hand[i]}")
+        if yes_or_no("Are you sure you want to continue?") == "yes":
+            return card_hand
+
 def main():
-    values, suits = seperate_value(get_cards())
+    cards = summary()
+    values, suits = seperate_value(cards)
     straight = is_straight(values)
     flush = is_flush(suits)
     count = get_value_count(values)
