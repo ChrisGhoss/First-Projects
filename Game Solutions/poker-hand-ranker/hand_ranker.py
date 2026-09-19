@@ -54,7 +54,7 @@ def yes_or_no(text):
         if answer == "yes" or answer == "no":
             return answer
         print("Please type 'yes' or 'no'.")
-        
+
 def summary():
     while True:
         card_hand = get_cards()
@@ -64,12 +64,16 @@ def summary():
         if yes_or_no("Are you sure you want to continue?") == "yes":
             return card_hand
 
-def main():
+def call_variables():
     cards = summary()
     values, suits = seperate_value(cards)
     straight = is_straight(values)
     flush = is_flush(suits)
     count = get_value_count(values)
+    return values, straight, flush, count
+
+def main():
+    values, straight, flush, count = call_variables()
     if straight and flush and values[0] == 14:
             print("ROYAL FLUSH")
     elif straight and flush:
