@@ -31,11 +31,20 @@ def get_dealer_card():
             print("Please make sure your integer is from 1 to 10")
 
 def is_blackjack(cards):
-    if cards[0] + cards[1] == 21:
-        print("Blackjack! No action needed")
-        
+    for i in range(2):
+        if cards[i] == 1:
+            if i == 0:
+                if 11 + cards[1] == 21:
+                    print("Blackjack! No action needed")
+                    return True
+            elif i == 1:
+                if 11 + cards[0] == 21:
+                    print("Blackjack! No action needed")
+                    return True
+    return False
+
 def main():
-    print(get_dealer_card())
+    print(is_blackjack(get_cards()))
 
 if __name__ == "__main__":
     main()
