@@ -23,12 +23,12 @@ def get_dealer_card():
     while True:
         try:
             card = int(input("Dealer's card: "))
-            if card > 0 and card <= 10:
+            if card >= 2 and card <= 11:
                 return card
             else:
-                print("Your integer should be from 1 to 10!")
+                print("Your integer should be from 2 to 11!")
         except:
-            print("Please make sure your integer is from 1 to 10")
+            print("Please make sure your integer is from 2 to 11")
 
 def is_blackjack(cards):
     for i in range(2):
