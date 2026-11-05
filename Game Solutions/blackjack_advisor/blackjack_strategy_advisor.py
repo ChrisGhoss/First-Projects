@@ -18,7 +18,7 @@ def get_cards():
     return cards
 
 def get_dealer_card():
-    print("Input should be an integer from 1 to 10")
+    print("Input should be an integer from 2 to 11")
     print(("What card did the dealer get?"))
     while True:
         try:
@@ -35,16 +35,43 @@ def is_blackjack(cards):
         if cards[i] == 1:
             if i == 0:
                 if 11 + cards[1] == 21:
-                    print("Blackjack! No action needed")
+                    print("BLACKJACK! No action needed")
                     return True
             elif i == 1:
                 if 11 + cards[0] == 21:
-                    print("Blackjack! No action needed")
+                    print("BLACKJACK! No action needed")
                     return True
     return False
 
+def advice(cards, dealer_card):
+    sum = cards[0] + cards[1]
+    if sum >= 17:
+        print("STAND")
+    elif sum >= 12:
+        if dealer_card >= 7:
+            print("HIT")
+        else:
+            print("STAND")
+    elif sum == 11:
+        if dealer_card != 11:
+            print("DOUBLE")
+        else:
+            print("HIT")
+    elif sum == 10:
+        if dealer_card != 10 and dealer_card != 11:
+            print("DOUBLE")
+        else:
+            print("HIT")
+    elif sum == 9:
+        if dealer_card >= 3 and dealer_card <= 6:
+            print("DOUBLE")
+        else:
+            print("HIT")
+    else:
+        print("HIT")
+
 def main():
-    print(is_blackjack(get_cards()))
+    print(advice(get_cards(), get_dealer_card()))
 
 if __name__ == "__main__":
     main()
